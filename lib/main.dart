@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_identification_app/screens/splash_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(PlantIdentificationApp());
 }
 

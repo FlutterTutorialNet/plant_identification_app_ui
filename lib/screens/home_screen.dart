@@ -15,18 +15,20 @@ class HomeScreen extends StatefulWidget{
 class _HomeScreen extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    var screenSize = MediaQuery
+        .of(context)
+        .size;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              ThemeUtil.PrimaryColor_100,
-              ThemeUtil.PrimaryColor_100,
-              ThemeUtil.PrimaryColor
-            ]
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                ThemeUtil.PrimaryColor_100,
+                ThemeUtil.PrimaryColor_100,
+                ThemeUtil.PrimaryColor
+              ]
           ),
         ),
         child: Stack(
@@ -44,8 +46,14 @@ class _HomeScreen extends State<HomeScreen> {
               padding: EdgeInsets.fromLTRB(20, 70, 20, 20),
               child: Column(
                 children: [
-                  Text("Plant Identification", style: Theme.of(context).textTheme.headline4,),
-                  Text("High Accuracy Engine", style: Theme.of(context).textTheme.subtitle1,),
+                  Text("Plant Identification", style: Theme
+                      .of(context)
+                      .textTheme
+                      .headline4,),
+                  Text("High Accuracy Engine", style: Theme
+                      .of(context)
+                      .textTheme
+                      .subtitle1,),
                   Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +62,10 @@ class _HomeScreen extends State<HomeScreen> {
                           padding: EdgeInsets.only(top: 20, left: 30),
                           child: Column(
                             children: [
-                              Text("96", style: Theme.of(context).textTheme.headline4,),
+                              Text("96", style: Theme
+                                  .of(context)
+                                  .textTheme
+                                  .headline4,),
                               Text("Scan"),
                             ],
                           ),
@@ -63,7 +74,10 @@ class _HomeScreen extends State<HomeScreen> {
                           padding: EdgeInsets.only(top: 20, right: 30),
                           child: Column(
                             children: [
-                              Text("36", style: Theme.of(context).textTheme.headline4,),
+                              Text("36", style: Theme
+                                  .of(context)
+                                  .textTheme
+                                  .headline4,),
                               Text("Diagnosis"),
                             ],
                           ),
@@ -76,10 +90,14 @@ class _HomeScreen extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          padding: EdgeInsets.only(top: 30, left: 30, right: 30),
+                          padding: EdgeInsets.only(
+                              top: 30, left: 30, right: 30),
                           child: Column(
                             children: [
-                              Text("31", style: Theme.of(context).textTheme.headline4,),
+                              Text("31", style: Theme
+                                  .of(context)
+                                  .textTheme
+                                  .headline4,),
                               Text("Plants"),
                             ],
                           ),
@@ -92,11 +110,17 @@ class _HomeScreen extends State<HomeScreen> {
                     child: Stack(
                       children: [
                         Container(
-                          child: Image(image: AssetImage("assets/home/brightness.png"),width:64, height: 300,),
+                          child: Image(image: AssetImage(
+                              "assets/home/brightness.png"),
+                            width: 64,
+                            height: 300,),
                           padding: EdgeInsets.only(top: 10),
                         ),
                         Container(
-                          child: Image(image: AssetImage("assets/home/brightness-button.png"),width:64, height: 64,),
+                          child: Image(image: AssetImage(
+                              "assets/home/brightness-button.png"),
+                            width: 64,
+                            height: 64,),
                         ),
                       ],
                     ),
@@ -106,24 +130,28 @@ class _HomeScreen extends State<HomeScreen> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.only(bottom: 200, left:20, right:20),
+              padding: EdgeInsets.only(bottom: 200, left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Image(image: AssetImage("assets/icons/diagnosis.png"),width:64, height: 64,),
-                        Text("Diagnosis")
-                      ]
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Image(image: AssetImage("assets/icons/diagnosis.png"),
+                            width: 64,
+                            height: 64,),
+                          Text("Diagnosis")
+                        ]
                     ),
                   ),
                   Container(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Image(image: AssetImage("assets/icons/history.png"),width:64, height: 64,),
+                          Image(image: AssetImage("assets/icons/history.png"),
+                            width: 64,
+                            height: 64,),
                           Text("History")
                         ]
                     ),
@@ -133,50 +161,47 @@ class _HomeScreen extends State<HomeScreen> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.only(bottom: 15, left:20, right:20),
+              padding: EdgeInsets.only(bottom: 15, left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     child: SimpleShadow(
-                        child: Image(
-                          image: AssetImage("assets/icons/file-browse.png"),
-                          width:72, height: 72,
-                        ),
-                      color: Colors.black54,
-                      sigma: 5,
-                      offset: Offset(2,2),
-                      opacity: 0.6,
+                      child: Image(
+                        image: AssetImage("assets/icons/file-browse.png"),
+                        width: 72, height: 72,
+                      ),
+                      color: Colors.black54, sigma: 5,
+                      offset: Offset(2, 2), opacity: 0.6,
                     ),
                   ),
                   Container(
                     child: SimpleShadow(
                       child: GestureDetector(
-                          child: Image(
-                            image: AssetImage("assets/icons/camera.png"),
-                            width:72, height: 72,
-                          ),
-                        onTap: (){
-                            Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (ctx)=> ScanScreen()
-                                )
-                            );
+                        child: Image(
+                          image: AssetImage("assets/icons/camera.png"),
+                          width: 72, height: 72,
+                        ),
+                        onTap: () {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (ctx) => ScanScreen()
+                              )
+                          );
                         },
                       ),
-                      color: Colors.black54,
-                      sigma: 5,
-                      offset: Offset(2,2),
-                      opacity: 0.3,
+                      color: Colors.black54, sigma: 5,
+                      offset: Offset(2, 2), opacity: 0.3,
                     ),
                   ),
                   Container(
                     child: SimpleShadow(
-                      child: Image(image: AssetImage("assets/icons/my-plants.png"),width:72, height: 72,),
-                      color: Colors.black54,
-                      sigma: 5,
-                      offset: Offset(2,2),
-                      opacity: 0.3,
+                      child: Image(
+                        image: AssetImage("assets/icons/my-plants.png"),
+                        width: 72, height: 72,
+                      ),
+                      color: Colors.black54, sigma: 5,
+                      offset: Offset(2, 2), opacity: 0.3,
                     ),
                   ),
                 ],
