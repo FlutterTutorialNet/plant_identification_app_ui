@@ -9,7 +9,6 @@ class ScanResultScreen extends StatefulWidget{
   State<StatefulWidget> createState() {
     return _ScanResultScreenState();
   }
-
 }
 
 class _ScanResultScreenState extends State<ScanResultScreen> {
